@@ -740,7 +740,7 @@ function RolesView({ allChapters }) {
 const nonCoreChapters = [
   { name: "YPO Bahrain Integrated",              type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:"null"                                   },
   { name: "YPO Cairo Integrated",                type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
-  { name: "YPO Capital Pakistan Integrated",     type: "YPO",      SPO:"unregistered",                          SFO:"unregistered",                                               Fam:"trained"                                },
+  { name: "YPO Capital Pakistan Integrated",     type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"},   SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
   { name: "YPO Dubai Downtown Integrated",       type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
   { name: "YPO Dubai Integrated",               type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"}, SFO:"trained",                                             Fam:"unregistered"                           },
   { name: "YPO Emirates Integrated",            type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
@@ -755,16 +755,16 @@ const nonCoreChapters = [
   { name: "YPO Lebanon",                        type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
   { name: "YPO Levant Integrated",              type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
   { name: "YPO MENA Gulf Regional Integrated",  type: "YPO",      SPO:"trained",                               SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
-  { name: "YPO MENA One Regional Integrated",   type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
+  { name: "YPO MENA One Regional Integrated",   type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"},   SFO:"null",                                                       Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
   { name: "YPO Morocco Integrated",             type: "YPO",      SPO:"null",                                  SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
   { name: "YPO Olive MENA Regional Integrated", type: "YPO",      SPO:"null",                                  SFO:"null",                                                       Fam:"null"                                   },
   { name: "YPO Oman Integrated",                type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"unregistered"                           },
-  { name: "YPO Pakistan",                       type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:"missed"                                 },
+  { name: "YPO Pakistan",                       type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
   { name: "YPO Palestine Integrated",           type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:"unregistered"                           },
   { name: "YPO Qatar Integrated",               type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:"unregistered"                           },
   { name: "YPO Saudi",                          type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
   { name: "YPO Tunisia Integrated",             type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
-  { name: "YPO UAE Integrated",                 type: "YPO",      SPO:"untrained",                             SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
+  { name: "YPO UAE Integrated",                 type: "YPO",      SPO:"missed",                                SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
 ];
 
 const nonCoreRoles = ["SPO", "SFO", "Fam"];
