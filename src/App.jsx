@@ -273,6 +273,11 @@ const STATUS = {
 
 function StatusCell({ status, blank }) {
   if (blank) return null;
+  if (status === "null" || !STATUS[status]) return (
+    <div style={{ width:44, height:28, borderRadius:3, background:"#e8edf5",
+      display:"flex", alignItems:"center", justifyContent:"center",
+      margin:"0 auto", fontSize:13, fontWeight:600, color:"#aab" }}>—</div>
+  );
   const { bg, text, icon } = STATUS[status];
   return (
     <div style={{ width:44, height:28, borderRadius:3, background:bg, color:text,
@@ -732,6 +737,114 @@ function RolesView({ allChapters }) {
 }
 
 
+const nonCoreChapters = [
+  { name: "YPO Bahrain Integrated",              type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:"null"                                   },
+  { name: "YPO Cairo Integrated",                type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
+  { name: "YPO Capital Pakistan Integrated",     type: "YPO",      SPO:"unregistered",                          SFO:"unregistered",                                               Fam:"trained"                                },
+  { name: "YPO Dubai Downtown Integrated",       type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
+  { name: "YPO Dubai Integrated",               type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"}, SFO:"trained",                                             Fam:"unregistered"                           },
+  { name: "YPO Emirates Integrated",            type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
+  { name: "YPO Gold Lebanon",                   type: "YPO Gold", SPO:"trained",                               SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
+  { name: "YPO Gold Pakistan",                  type: "YPO Gold", SPO:"unregistered",                          SFO:"trained",                                                    Fam:"trained"                                },
+  { name: "YPO Gold Saudi",                     type: "YPO Gold", SPO:"null",                                  SFO:"null",                                                       Fam:"unregistered"                           },
+  { name: "YPO Indus Integrated",               type: "YPO",      SPO:"missed",                                SFO:"trained",                                                    Fam:"unregistered"                           },
+  { name: "YPO Iraq Integrated",                type: "YPO",      SPO:"null",                                  SFO:"null",                                                       Fam:"null"                                   },
+  { name: "YPO Jordan Integrated",              type: "YPO",      SPO:"null",                                  SFO:"trained",                                                    Fam:"unregistered"                           },
+  { name: "YPO Khaleej Integrated",             type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:"null"                                   },
+  { name: "YPO Kuwait Integrated",              type: "YPO",      SPO:"null",                                  SFO:"unregistered",                                               Fam:"null"                                   },
+  { name: "YPO Lebanon",                        type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
+  { name: "YPO Levant Integrated",              type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
+  { name: "YPO MENA Gulf Regional Integrated",  type: "YPO",      SPO:"trained",                               SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
+  { name: "YPO MENA One Regional Integrated",   type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
+  { name: "YPO Morocco Integrated",             type: "YPO",      SPO:"null",                                  SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
+  { name: "YPO Olive MENA Regional Integrated", type: "YPO",      SPO:"null",                                  SFO:"null",                                                       Fam:"null"                                   },
+  { name: "YPO Oman Integrated",                type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"unregistered"                           },
+  { name: "YPO Pakistan",                       type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:"missed"                                 },
+  { name: "YPO Palestine Integrated",           type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:"unregistered"                           },
+  { name: "YPO Qatar Integrated",               type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:"unregistered"                           },
+  { name: "YPO Saudi",                          type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
+  { name: "YPO Tunisia Integrated",             type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
+  { name: "YPO UAE Integrated",                 type: "YPO",      SPO:"untrained",                             SFO:{s:"untrained",session:"FO W3",date:"19 May"},                Fam:"trained"                                },
+];
+
+const nonCoreRoles = ["SPO", "SFO", "Fam"];
+const nonCoreLabels = { SPO: "Spouse/Partner Officer", SFO: "Spouse Forum Officer", Fam: "Family Officer" };
+
+function NonCoreView({ allChapters, selectedChapters }) {
+  const filtered = selectedChapters.length > 0
+    ? allChapters.filter(c => selectedChapters.includes(c.name))
+    : allChapters;
+
+  // Normalise a cell value: string or {s, session, date} object
+  const getStatus = val => (val && typeof val === "object") ? val.s : val;
+  const getDate   = val => (val && typeof val === "object") ? val.date : null;
+
+  return (
+    <div style={{ overflowX:"auto" }}>
+      <table style={{ borderCollapse:"collapse", width:"100%", background:"#fff", borderRadius:10, overflow:"hidden", boxShadow:"0 1px 3px rgba(0,47,108,0.06),0 4px 16px rgba(0,47,108,0.08)" }}>
+        <thead>
+          <tr style={{ background:YPO_NAVY }}>
+            <th style={{ textAlign:"left", padding:"12px 20px", fontSize:10, fontWeight:700, color:"rgba(255,255,255,0.55)", letterSpacing:"0.1em", textTransform:"uppercase", minWidth:240, borderRight:"1px solid rgba(255,255,255,0.1)" }}>Chapter</th>
+            {nonCoreRoles.map(r => (
+              <th key={r} style={{ padding:"12px 8px", textAlign:"center", fontSize:10, fontWeight:700, color:"#fff", letterSpacing:"0.06em", textTransform:"uppercase", minWidth:160, borderRight:"1px solid rgba(255,255,255,0.1)" }}>
+                <div>{r}</div>
+                <div style={{ fontSize:9, fontWeight:400, color:"rgba(255,255,255,0.55)", marginTop:2 }}>{nonCoreLabels[r]}</div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {filtered.map((ch, i) => {
+            const isGold = ch.type === "YPO Gold";
+            return (
+              <tr key={ch.name} style={{ background: i%2===0 ? "#fff" : "#f7f9fc", borderBottom:"1px solid #e8edf5" }}>
+                <td style={{ padding:"8px 20px", fontSize:12, color:"#fff", fontWeight:700, background:YPO_NAVY, borderRight:"1px solid rgba(255,255,255,0.1)", whiteSpace:"nowrap" }}>
+                  {isGold && (
+                    <span style={{ fontSize:9, background:"rgba(232,184,0,0.25)", color:"#FFD84D", border:"1px solid rgba(232,184,0,0.5)", borderRadius:3, padding:"1px 5px", marginRight:7, fontWeight:700, letterSpacing:0.5 }}>GOLD</span>
+                  )}
+                  {ch.name}
+                </td>
+                {nonCoreRoles.map(r => {
+                  const val = ch[r];
+                  const status = getStatus(val);
+                  const date = getDate(val);
+                  return (
+                    <td key={r} style={{ padding:"6px 8px", textAlign:"center", borderRight:"1px solid #e8edf5" }}>
+                      {status === "null" || !STATUS[status] ? (
+                        <div style={{ width:44, height:28, borderRadius:3, background:"#e8edf5", display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto", fontSize:13, fontWeight:600, color:"#aab" }}>—</div>
+                      ) : status === "untrained" && date ? (
+                        <div style={{ display:"inline-flex", flexDirection:"column", alignItems:"center", gap:3 }}>
+                          <div style={{ width:44, height:28, borderRadius:3, background:STATUS.untrained.bg, color:"#fff", display:"flex", alignItems:"center", justifyContent:"center", fontSize:13, fontWeight:700 }}>◑</div>
+                          <span style={{ fontSize:9, fontWeight:700, color:STATUS.untrained.bg, letterSpacing:"0.03em" }}>{date}</span>
+                        </div>
+                      ) : (
+                        <StatusCell status={status} />
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <div style={{ padding:"16px 4px 0", display:"flex", gap:20, flexWrap:"wrap", alignItems:"center" }}>
+        {Object.entries(STATUS).map(([key, { bg, text, label, icon }]) => (
+          <div key={key} style={{ display:"flex", alignItems:"center", gap:7 }}>
+            <div style={{ width:22, height:16, borderRadius:3, background:bg, display:"flex", alignItems:"center", justifyContent:"center", fontSize:10, color:text, fontWeight:700 }}>{icon}</div>
+            <span style={{ fontSize:11, color:"#555", fontWeight:500 }}>{label}</span>
+          </div>
+        ))}
+        <div style={{ display:"flex", alignItems:"center", gap:7 }}>
+          <div style={{ width:22, height:16, borderRadius:3, background:"#e8edf5", display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, color:"#aab", fontWeight:600 }}>—</div>
+          <span style={{ fontSize:11, color:"#555", fontWeight:500 }}>No officer in role</span>
+        </div>
+        <span style={{ marginLeft:"auto", fontSize:10, color:"#9aa0b4", fontStyle:"italic" }}>Date shown = upcoming session date</span>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [tab, setTab] = useState("status");
   const [locFilter, setLocFilter] = useState("All"); // All, Sydney, Chicago, Virtual
@@ -943,7 +1056,7 @@ export default function App() {
       {/* Tab bar */}
       <div style={{ background:"#fff", borderBottom:"1px solid #dde2ef", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
         <div style={{ display:"flex" }}>
-          {[["status","Training"],["roles","By Role"]].map(([t,label]) => (
+          {[["status","Training by Core Role"],["noncore","Training by Non-Core Roles"],["roles","Role Breakdown"]].map(([t,label]) => (
             <button key={t} onClick={() => { setTab(t); if(t !== "status") { setLocFilter("All"); } }} style={{
               background:"none", border:"none",
               borderBottom: tab===t ? `3px solid ${YPO_NAVY}` : "3px solid transparent",
@@ -969,7 +1082,8 @@ export default function App() {
       {/* Table */}
       <div style={{ overflowX:"auto", padding:"24px 32px 32px" }}>
         {tab === "roles" ? <RolesView allChapters={chapters} /> : null}
-        {tab !== "roles" && <table style={{ borderCollapse:"collapse", width:"100%", background:"#fff", borderRadius:10, overflow:"hidden", boxShadow:"0 1px 3px rgba(0,47,108,0.06),0 4px 16px rgba(0,47,108,0.08)" }}>
+        {tab === "noncore" ? <NonCoreView allChapters={nonCoreChapters} selectedChapters={selectedChapters} /> : null}
+        {tab !== "roles" && tab !== "noncore" && <table style={{ borderCollapse:"collapse", width:"100%", background:"#fff", borderRadius:10, overflow:"hidden", boxShadow:"0 1px 3px rgba(0,47,108,0.06),0 4px 16px rgba(0,47,108,0.08)" }}>
           <thead>
             <tr style={{ background:YPO_NAVY }}>
               <th style={{ textAlign:"left", padding:"12px 20px", fontSize:10, fontWeight:700, color:"rgba(255,255,255,0.55)", letterSpacing:"0.1em", textTransform:"uppercase", minWidth:240, borderRight:"1px solid rgba(255,255,255,0.1)" }}>Chapter</th>
@@ -1010,7 +1124,8 @@ export default function App() {
         </table>}
       </div>
 
-      {/* Legend */}
+      {/* Legend - only show on Training tab */}
+
       {tab === "status" && (
         <div style={{ padding:"0 32px 28px", display:"flex", alignItems:"center", gap:20, flexWrap:"wrap" }}>
           {[
