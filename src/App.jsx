@@ -1079,7 +1079,7 @@ export default function App() {
           <span style={{ fontSize:11, color:"#8892b0", fontWeight:500 }}>
             <span style={{ color:YPO_GREEN, fontWeight:700 }}>{allFullyTrained}</span> fully trained
           </span>
-          <span style={{ fontSize:11, color:"#8892b0", fontWeight:500 }}>Data as of 21/05/2026</span>
+          <span style={{ fontSize:11, color:"#8892b0", fontWeight:500 }}>Data as of 25/05/2026</span>
         </div>
       </div>
 
