@@ -11,11 +11,11 @@ const chapters = [
   { name: "YPO Cairo Integrated",                type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",       MEO:"unregistered" },
   { name: "YPO Capital Pakistan Integrated",     type: "YPO",      CC:"trained",         LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",       MEO:"unregistered" },
   { name: "YPO Dubai Downtown Integrated",       type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",     MEO:"trained"      },
-  { name: "YPO Dubai Integrated",               type: "YPO",      CC:"trained",       LO:"trained",     ALO:"trained",       FO:"trained",       MO:"unregistered",  MEO:"unregistered" },
+  { name: "YPO Dubai Integrated",               type: "YPO",      CC:"trained",       LO:"trained",     ALO:"trained",       FO:"trained",       MO:"unregistered",  MEO:"null"         },
   { name: "YPO Emirates Integrated",            type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"trained"      },
   { name: "YPO Gold Lebanon",                   type: "YPO Gold", CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"unregistered",  MEO:"trained"      },
-  { name: "YPO Gold Pakistan",                  type: "YPO Gold", CC:"untrained",     LO:"trained",       ALO:"trained",       FO:"trained",       MO:"unregistered",  MEO:"trained"      },
-  { name: "YPO Gold Saudi",                     type: "YPO Gold", CC:"unregistered",  LO:"trained",       ALO:"unregistered",  FO:"unregistered",  MO:"unregistered",  MEO:"trained"      },
+  { name: "YPO Gold Pakistan",                  type: "YPO Gold", CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"unregistered",  MEO:"trained"      },
+  { name: "YPO Gold Saudi",                     type: "YPO Gold", CC:"untrained",     LO:"trained",       ALO:"unregistered",  FO:"unregistered",  MO:"unregistered",  MEO:"trained"      },
   { name: "YPO Indus Integrated",               type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",       MEO:"trained"      },
   { name: "YPO Iraq Integrated",                type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"unregistered" },
   { name: "YPO Jordan Integrated",              type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",     MEO:"unregistered" },
@@ -27,8 +27,8 @@ const chapters = [
   { name: "YPO MENA One Regional Integrated",   type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"trained"      },
   { name: "YPO Morocco Integrated",             type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"missed"       },
   { name: "YPO Olive MENA Regional Integrated", type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"unregistered" },
-  { name: "YPO Oman Integrated",                type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"missed",     MEO:"trained"      },
-  { name: "YPO Pakistan",                       type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",       MEO:"unregistered" },
+  { name: "YPO Oman Integrated",                type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"trained"      },
+  { name: "YPO Pakistan",                       type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",       MEO:"null"         },
   { name: "YPO Palestine Integrated",           type: "YPO",      CC:"trained",       LO:"missed",        ALO:"trained",     FO:"trained",       MO:"trained",     MEO:"trained"      },
   { name: "YPO Qatar Integrated",               type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",       FO:"trained",       MO:"trained",       MEO:"trained"      },
   { name: "YPO Saudi",                          type: "YPO",      CC:"trained",       LO:"trained",       ALO:"trained",     FO:"trained",       MO:"trained",     MEO:"trained"      },
@@ -41,11 +41,11 @@ const locationData = {
   "YPO Cairo Integrated":                { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Integrated Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 2"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 1"}, MEO:{loc:"unregistered",status:"unregistered"} },
   "YPO Capital Pakistan Integrated":     { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair YPO Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 3"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Sydney",status:"completed",session:"Chapter Forum Officer Workshop"}, MO:{loc:"Previously Trained",status:"prev_trained",session:"Trained prior to 2026 GLC cycle"}, MEO:{loc:"unregistered",status:"unregistered"} },
   "YPO Dubai Downtown Integrated":       { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Integrated Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Chicago",status:"completed",session:"Chapter Assistant Learning Officer Workshop - B"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 2"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 3"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
-  "YPO Dubai Integrated":               { CC:{loc:"Sydney",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Sydney",status:"completed",session:"Chapter Learning Officer Workshop"}, ALO:{loc:"Sydney",status:"completed",session:"Chapter Assistant Learning Officer Workshop - B"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 2"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"unregistered",status:"unregistered"} },
+  "YPO Dubai Integrated":               { CC:{loc:"Sydney",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Sydney",status:"completed",session:"Chapter Learning Officer Workshop"}, ALO:{loc:"Sydney",status:"completed",session:"Chapter Assistant Learning Officer Workshop - B"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 2"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"null",status:"null"} },
   "YPO Emirates Integrated":            { CC:{loc:"Chicago",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Sydney",status:"completed",session:"Chapter Learning Officer Workshop"}, ALO:{loc:"Sydney",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Sydney",status:"completed",session:"Chapter Forum Officer Workshop"}, MO:{loc:"Sydney",status:"completed",session:"Chapter Membership Officer Workshop - YPO - B"}, MEO:{loc:"Sydney",status:"completed",session:"Chapter Member Engagement Officer Workshop - YPO - B"} },
   "YPO Gold Lebanon":                   { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Gold Workshop - 1"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 2"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Previously Trained",status:"prev_trained",session:"Trained prior to 2026 GLC cycle"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 1"} },
-  "YPO Gold Pakistan":                  { CC:{loc:"Virtual",status:"upcoming",session:"Chapter Chair Gold Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 3"}, ALO:{loc:"Chicago",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
-  "YPO Gold Saudi":                     { CC:{loc:"unregistered",status:"unregistered"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 1"}, ALO:{loc:"unregistered",status:"unregistered"}, FO:{loc:"unregistered",status:"unregistered"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"Sydney",status:"completed",session:"Chapter Member Engagement Officer Workshop - YPO - A"} },
+  "YPO Gold Pakistan":                  { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Gold Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 3"}, ALO:{loc:"Chicago",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
+  "YPO Gold Saudi":                     { CC:{loc:"Virtual",status:"upcoming",session:"Chapter Chair Gold Workshop - 3"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 1"}, ALO:{loc:"unregistered",status:"unregistered"}, FO:{loc:"unregistered",status:"unregistered"}, MO:{loc:"unregistered",status:"unregistered"}, MEO:{loc:"Sydney",status:"completed",session:"Chapter Member Engagement Officer Workshop - YPO - A"} },
   "YPO Indus Integrated":               { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair YPO Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 1"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 1"} },
   "YPO Iraq Integrated":                { CC:{loc:"Sydney",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Sydney",status:"completed",session:"Chapter Learning Officer - Fast Track Workshop"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 1"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 1"}, MEO:{loc:"unregistered",status:"unregistered"} },
   "YPO Jordan Integrated":              { CC:{loc:"Chicago",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 3"}, MEO:{loc:"unregistered",status:"unregistered"} },
@@ -57,8 +57,8 @@ const locationData = {
   "YPO MENA One Regional Integrated":   { CC:{loc:"Sydney",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Sydney",status:"completed",session:"Chapter Learning Officer Workshop"}, ALO:{loc:"Chicago",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Sydney",status:"completed",session:"Chapter Membership Officer Workshop - YPO - A"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 1"} },
   "YPO Morocco Integrated":             { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Integrated Workshop - 1"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 1"}, FO:{loc:"Virtual",status:"completed",session:"Advanced Forum Officer Workshop - 3"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 1"}, MEO:{loc:"Virtual",status:"missed",session:"Member Engagement Officer Workshop - 3"} },
   "YPO Olive MENA Regional Integrated": { CC:{loc:"Previously Trained",status:"prev_trained",session:"Trained prior to 2026 GLC cycle"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Sydney",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 2"}, MO:{loc:"Previously Trained",status:"prev_trained",session:"Trained prior to 2026 GLC cycle"}, MEO:{loc:"unregistered",status:"unregistered"} },
-  "YPO Oman Integrated":                { CC:{loc:"Sydney",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 2"}, ALO:{loc:"Chicago",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Sydney",status:"completed",session:"Chapter Forum Officer Workshop"}, MO:{loc:"Virtual",status:"missed",session:"Membership Officer Workshop - 3"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
-  "YPO Pakistan":                        { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair YPO Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Sydney",status:"completed",session:"Chapter Membership Officer Workshop - YPO - B"}, MEO:{loc:"unregistered",status:"unregistered"} },
+  "YPO Oman Integrated":                { CC:{loc:"Sydney",status:"completed",session:"Chapter Chair Workshop - Integrated"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 2"}, ALO:{loc:"Chicago",status:"completed",session:"Chapter Assistant Learning Officer Workshop - A"}, FO:{loc:"Sydney",status:"completed",session:"Chapter Forum Officer Workshop"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 3"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
+  "YPO Pakistan":                        { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair YPO Workshop - 2"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Sydney",status:"completed",session:"Chapter Membership Officer Workshop - YPO - B"}, MEO:{loc:"null",status:"null"} },
   "YPO Palestine Integrated":           { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Integrated Workshop - 2"}, LO:{loc:"Virtual",status:"missed",session:"Learning Officer (Fast Track) Workshop - 3"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 3"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 3"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
   "YPO Qatar Integrated":               { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Integrated Workshop - 3"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer (Fast Track) Workshop - 2"}, ALO:{loc:"Previously Trained",status:"prev_trained",session:"Trained prior to 2026 GLC cycle"}, FO:{loc:"Virtual",status:"completed",session:"Forum Officer Workshop - 1"}, MO:{loc:"Sydney",status:"completed",session:"Chapter Membership Officer Workshop - YPO - A"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
   "YPO Saudi":                           { CC:{loc:"Virtual",status:"completed",session:"Chapter Chair Integrated Workshop - 3"}, LO:{loc:"Virtual",status:"completed",session:"Learning Officer Workshop - 1"}, ALO:{loc:"Virtual",status:"completed",session:"Assistant Learning Officer Workshop - 3"}, FO:{loc:"Previously Trained",status:"prev_trained",session:"Trained prior to 2026 GLC cycle"}, MO:{loc:"Virtual",status:"completed",session:"Membership Officer Workshop - 3"}, MEO:{loc:"Virtual",status:"completed",session:"Member Engagement Officer Workshop - 3"} },
@@ -89,6 +89,7 @@ const roleData = {
       { chapter: "YPO Palestine Integrated", session: "Chapter Chair Integrated Workshop - 2", date: "13 Apr", location: "Virtual", prev: false },
       { chapter: "YPO Tunisia Integrated", session: "Chapter Chair Integrated Workshop - 1", date: "24 Mar", location: "Virtual", prev: false },
       { chapter: "YPO UAE Integrated", session: "Chapter Chair Workshop - Integrated", date: "Sydney: Feb", location: "Sydney", prev: false },
+      { chapter: "YPO Gold Pakistan", session: "Chapter Chair Gold Workshop - 2", date: "28 May", location: "Virtual", prev: false },
     ],
     awaiting: [
       { chapter: "YPO Dubai Downtown Integrated", session: "Chapter Chair Workshop - Integrated", date: "Chicago: 26 Apr", location: "Chicago" },
@@ -97,6 +98,7 @@ const roleData = {
       { chapter: "YPO Kuwait Integrated", session: "Chapter Chair Workshop - Integrated", date: "Chicago: 26 Apr", location: "Chicago" },
       { chapter: "YPO Khaleej Integrated", session: "Chapter Chair Integrated Workshop - 3", date: "6 May", location: "Virtual" },
       { chapter: "YPO Qatar Integrated", session: "Chapter Chair Integrated Workshop - 3", date: "6 May", location: "Virtual" },
+      { chapter: "YPO Gold Saudi", session: "Chapter Chair Gold Workshop - 3", date: "3 Jun", location: "Virtual" },
     ],
     missed: [
       { chapter: "YPO Saudi", session: "Chapter Chair Integrated Workshop - 2", date: "13 Apr", location: "Virtual" },
@@ -223,6 +225,7 @@ const roleData = {
       { chapter: "YPO Qatar Integrated", session: "Chapter Membership Officer Workshop - YPO - A", date: "Sydney: Feb", location: "Sydney", prev: false },
       { chapter: "YPO Tunisia Integrated", session: "Previously Trained", date: "Prior cycle", location: "—", prev: true },
       { chapter: "YPO UAE Integrated", session: "Chapter Membership Officer Workshop - YPO - A", date: "Sydney: Feb", location: "Sydney", prev: false },
+      { chapter: "YPO Oman Integrated", session: "Membership Officer Workshop - 3", date: "22 May", location: "Virtual", prev: false },
     ],
     awaiting: [
       { chapter: "YPO Dubai Downtown Integrated", session: "Membership Officer Workshop - 3", date: "22 May", location: "Virtual", prev: false },
@@ -230,9 +233,8 @@ const roleData = {
       { chapter: "YPO Kuwait Integrated", session: "Membership Officer Workshop - 3", date: "22 May", location: "Virtual", prev: false },
       { chapter: "YPO Palestine Integrated", session: "Membership Officer Workshop - 3", date: "22 May", location: "Virtual", prev: false },
     ],
-    missed: [
-      { chapter: "YPO Oman Integrated", session: "Membership Officer Workshop - 2", date: "15 Apr", location: "Virtual" },
-    ],
+    missed: [],
+    // Oman MO now trained via Workshop-3
   },
   MEO: {
     trained: [
@@ -744,11 +746,11 @@ function RolesView({ allChapters }) {
 const nonCoreChapters = [
   { name: "YPO Bahrain Integrated",              type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:"null"                                   },
   { name: "YPO Cairo Integrated",                type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
-  { name: "YPO Capital Pakistan Integrated",     type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"},   SFO:{s:"pending",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
+  { name: "YPO Capital Pakistan Integrated",     type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"},   SFO:{s:"missed",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
   { name: "YPO Dubai Downtown Integrated",       type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
   { name: "YPO Dubai Integrated",               type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"}, SFO:"trained",                                             Fam:"trained"                                },
   { name: "YPO Emirates Integrated",            type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
-  { name: "YPO Gold Lebanon",                   type: "YPO Gold", SPO:"trained",                               SFO:{s:"pending",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
+  { name: "YPO Gold Lebanon",                   type: "YPO Gold", SPO:"trained",                               SFO:{s:"missed",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
   { name: "YPO Gold Pakistan",                  type: "YPO Gold", SPO:"unregistered",                          SFO:"trained",                                                    Fam:"trained"                                },
   { name: "YPO Gold Saudi",                     type: "YPO Gold", SPO:"null",                                  SFO:"null",                                                       Fam:"unregistered"                           },
   { name: "YPO Indus Integrated",               type: "YPO",      SPO:"missed",                                SFO:"trained",                                                    Fam:"unregistered"                           },
@@ -758,9 +760,9 @@ const nonCoreChapters = [
   { name: "YPO Kuwait Integrated",              type: "YPO",      SPO:"null",                                  SFO:"unregistered",                                               Fam:"null"                                   },
   { name: "YPO Lebanon",                        type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"trained"                                },
   { name: "YPO Levant Integrated",              type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
-  { name: "YPO MENA Gulf Regional Integrated",  type: "YPO",      SPO:"trained",                               SFO:{s:"pending",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
+  { name: "YPO MENA Gulf Regional Integrated",  type: "YPO",      SPO:"trained",                               SFO:{s:"missed",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
   { name: "YPO MENA One Regional Integrated",   type: "YPO",      SPO:{s:"untrained",session:"Fam W3",date:"1 Jun"},   SFO:"null",                                                       Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
-  { name: "YPO Morocco Integrated",             type: "YPO",      SPO:"null",                                  SFO:{s:"pending",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
+  { name: "YPO Morocco Integrated",             type: "YPO",      SPO:"null",                                  SFO:{s:"missed",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
   { name: "YPO Olive MENA Regional Integrated", type: "YPO",      SPO:"null",                                  SFO:"null",                                                       Fam:"null"                                   },
   { name: "YPO Oman Integrated",                type: "YPO",      SPO:"trained",                               SFO:"trained",                                                    Fam:"unregistered"                           },
   { name: "YPO Pakistan",                       type: "YPO",      SPO:"unregistered",                          SFO:"trained",                                                    Fam:{s:"untrained",session:"Fam W3",date:"1 Jun"} },
@@ -768,7 +770,7 @@ const nonCoreChapters = [
   { name: "YPO Qatar Integrated",               type: "YPO",      SPO:"unregistered",                          SFO:"null",                                                       Fam:"unregistered"                           },
   { name: "YPO Saudi",                          type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
   { name: "YPO Tunisia Integrated",             type: "YPO",      SPO:"trained",                               SFO:"null",                                                       Fam:"trained"                                },
-  { name: "YPO UAE Integrated",                 type: "YPO",      SPO:"missed",                                SFO:{s:"pending",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
+  { name: "YPO UAE Integrated",                 type: "YPO",      SPO:"missed",                                SFO:{s:"missed",session:"FO W3",date:"19 May"},                 Fam:"trained"                                },
 ];
 
 const nonCoreRoles = ["SPO", "SFO", "Fam"];
@@ -1060,8 +1062,8 @@ export default function App() {
       {/* Tab bar */}
       <div style={{ background:"#fff", borderBottom:"1px solid #dde2ef", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
         <div style={{ display:"flex" }}>
-          {[["status","Training by Core Role"],["roles","Role Breakdown"]].map(([t,label]) => (
-            <button key={t} onClick={() => { setTab(t); if(t !== "status") { setLocFilter("All"); } }} style={{
+          {[["status","Training by Core Role"],["roles","Role Breakdown"],["noncore","Non-Core Officers"]].map(([t,label]) => (
+            <button key={t} onClick={() => { setTab(t); setLocFilter("All"); }} style={{
               background:"none", border:"none",
               borderBottom: tab===t ? `3px solid ${YPO_NAVY}` : "3px solid transparent",
               color: tab===t ? YPO_NAVY : "#8892b0",
@@ -1079,14 +1081,15 @@ export default function App() {
           <span style={{ fontSize:11, color:"#8892b0", fontWeight:500 }}>
             <span style={{ color:YPO_GREEN, fontWeight:700 }}>{allFullyTrained}</span> fully trained
           </span>
-          <span style={{ fontSize:11, color:"#8892b0", fontWeight:500 }}>Data as of 25/05/2026</span>
+          <span style={{ fontSize:11, color:"#8892b0", fontWeight:500 }}>Data as of 03/06/2026</span>
         </div>
       </div>
 
       {/* Table */}
       <div style={{ overflowX:"auto", padding:"24px 32px 32px" }}>
         {tab === "roles" ? <RolesView allChapters={chapters} /> : null}
-        {tab !== "roles" && <table style={{ borderCollapse:"collapse", width:"100%", background:"#fff", borderRadius:10, overflow:"hidden", boxShadow:"0 1px 3px rgba(0,47,108,0.06),0 4px 16px rgba(0,47,108,0.08)" }}>
+        {tab === "noncore" ? <NonCoreView allChapters={nonCoreChapters} selectedChapters={selectedChapters} /> : null}
+        {tab !== "roles" && tab !== "noncore" && <table style={{ borderCollapse:"collapse", width:"100%", background:"#fff", borderRadius:10, overflow:"hidden", boxShadow:"0 1px 3px rgba(0,47,108,0.06),0 4px 16px rgba(0,47,108,0.08)" }}>
           <thead>
             <tr style={{ background:YPO_NAVY }}>
               <th style={{ textAlign:"left", padding:"12px 20px", fontSize:10, fontWeight:700, color:"rgba(255,255,255,0.55)", letterSpacing:"0.1em", textTransform:"uppercase", minWidth:240, borderRight:"1px solid rgba(255,255,255,0.1)" }}>Chapter</th>
